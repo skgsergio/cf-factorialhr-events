@@ -39,10 +39,15 @@ async function getEvents(token) {
 
   const comp = new ICAL.Component(ICAL.parse(icalData));
   const events = comp.getAllSubcomponents('vevent');
+  const tz = new ICAL.Timezone(comp.getFirstSubcomponent("vtimezone"));
 
   events.forEach(eventPlain => {
     const event = new ICAL.Event(eventPlain);
+
+    event.startDate.zone = tz;
     const startDate = event.startDate.toJSDate();
+
+    event.endDate.zone = tz;
     const endDate = event.endDate.toJSDate();
 
     if (
