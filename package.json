@@ -1,0 +1,15 @@
+{
+  "name": "cf-factorialhr-events",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "npx wrangler deploy",
+    "start": "npx wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  },
+  "dependencies": {
+    "ical.js": "^1.5.0"
+  }
+}

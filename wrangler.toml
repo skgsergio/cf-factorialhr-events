@@ -1,0 +1,8 @@
+name = "factorialhr-events"
+main = "src/worker.js"
+compatibility_date = "2023-08-21"
+
+workers_dev = false
+
+[triggers]
+crons = ["00 06 * * 2-6"]
